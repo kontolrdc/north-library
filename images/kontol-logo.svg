@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Kontol logo">
+  <defs>
+    <linearGradient id="g" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#d99b59"/>
+      <stop offset="100%" stop-color="#7d512c"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="36" fill="#1a1d2b"/>
+  <circle cx="100" cy="78" r="50" fill="url(#g)" opacity="0.92"/>
+  <path d="M100 115 L146 156 L100 172 L54 156 Z" fill="#e8d5a8" opacity="0.9"/>
+  <path d="M72 92 Q100 68 128 92" fill="none" stroke="#f7f1e7" stroke-width="8" stroke-linecap="round"/>
+  <path d="M68 120 Q100 98 132 120" fill="none" stroke="#f7f1e7" stroke-width="8" stroke-linecap="round"/>
+  <path d="M100 62 L100 150" stroke="#1a1d2b" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="100" cy="38" r="12" fill="#f4e2b0"/>
+</svg>

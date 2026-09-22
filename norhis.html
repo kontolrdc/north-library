@@ -47,6 +47,7 @@
             <button type="button" data-action="profile" data-auth-only>View profile</button>
             <button type="button" data-action="reads" data-auth-only>Reading list</button>
             <button type="button" data-action="settings" data-auth-only>Settings</button>
+            <button type="button" data-action="admin" data-admin-only hidden>Admin console</button>
             <button type="button" data-action="login" data-guest-only>Log in</button>
             <button type="button" data-action="register" data-guest-only>Create account</button>
             <button type="button" data-action="signout" data-auth-only>Sign out</button>
@@ -197,6 +198,7 @@
   <div class="library-toolbar" aria-label="Library filters and sorting">
     <div class="library-results"><strong id="library-result-count">6 books</strong><span id="library-result-context">in the collection</span></div>
     <div class="library-controls">
+      <button class="ghost upload-library-button" type="button" data-open-upload data-admin-only hidden>Upload a book</button>
       <label for="library-category">Category</label>
       <select id="library-category">
         <option value="all">All books</option>
@@ -277,6 +279,46 @@
   </div>
   <div id="library-empty" class="library-empty" hidden>No books match these filters. Try another category or sort option.</div>
 </div>
+
+<section id="upload" class="screen upload-screen" style="padding:40px 32px;max-width:760px;">
+  <div class="upload-card">
+    <button class="back-link" type="button" data-back-library>← Back to library</button>
+    <div class="profile-eyebrow">Admin collection management</div>
+    <h1>Upload a book for extraction</h1>
+    <p class="upload-intro">Add a source file and metadata. The backend will extract chapters, create the reader content, and return the published book to the library.</p>
+
+    <form id="book-upload-form" class="upload-form">
+      <div class="upload-dropzone" id="book-dropzone">
+        <input id="book-file" name="file" type="file" accept=".pdf,.epub,.doc,.docx" required>
+        <i class="fa-solid fa-file-arrow-up" aria-hidden="true"></i>
+        <strong>Choose a book file</strong>
+        <span id="book-file-name">PDF, EPUB, DOC, or DOCX up to 50 MB</span>
+      </div>
+
+      <div class="upload-fields">
+        <label for="book-title">Book title</label>
+        <input id="book-title" name="title" type="text" required placeholder="e.g. The Story behind Kobine Festival">
+        <label for="book-category">Category</label>
+        <select id="book-category" name="category" required>
+          <option value="history">History</option>
+          <option value="festivals">Festivals</option>
+          <option value="leadership">Leadership</option>
+          <option value="education">Education</option>
+          <option value="community">Community</option>
+        </select>
+        <label for="book-description">Short description</label>
+        <textarea id="book-description" name="description" rows="4" required placeholder="What should readers know before they begin?"></textarea>
+      </div>
+
+      <div class="upload-contract">
+        <strong>After upload</strong>
+        <span>Extraction creates chapters, reading order, searchable text, and a preview for review before publication.</span>
+      </div>
+      <button class="cta" type="submit">Send for chapter extraction</button>
+      <div id="upload-status" class="upload-status" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
 
 <div id="reader" class="screen reader" style="padding:40px 32px;max-width:640px;">
   <div class="reader-header">
@@ -406,7 +448,7 @@
           <option value="Debit card">Debit card</option>
         </select>
         <label for="payment-reference">Mobile number or card reference</label>
-        <input id="payment-reference" type="text" inputmode="tel" placeholder="024 000 0000">
+        <input id="payment-reference" type="text" inputmode="tel" placeholder="0541715807" value="0541715807">
       </div>
     </div>
 

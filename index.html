@@ -16,7 +16,7 @@
     <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top py-3">
       <div class="container">
         <a class="navbar-brand fs-4" href="#home" onclick="event.preventDefault(); showScreen('home', null); syncNav('home')" aria-label="Return to homepage">
-          <i class="fa-solid fa-landmark me-2 text-light"></i>
+          <img src="images/Kontol-Research-and-Development-Center-logo with Motor (1).jpeg" alt="Kontol logo" class="brand-logo">
           <span class="text-dark">Northern Heritage Library</span>
         </a>
         
@@ -31,8 +31,8 @@
             <ul class="navbar-nav ms-auto">
             <button id="topup-button" class="btn btn-topup rounded-pill px-3 fw-semibold justify-content-center gap-2 d-flex align-items-center" type="button">
               <span id="span-balance-badge" class="rounded-pill px-3 py-2 text-center me-2">
-                    <i class="fa-solid fa-coins me-2"></i>
-                <span id="nav-balance">GHS 12.50</span>
+                    <i class="fa-solid fa-lock me-2"></i>
+                <span id="nav-balance">Pay per page</span>
                 </span>
             Top Up
             </button>
@@ -41,12 +41,13 @@
       </div>
         <div class="profile-wrap ms-2">
           <button id="profile-trigger" class="profile-trigger" type="button" aria-label="Open profile menu" aria-expanded="false">
-            <img src="images/profile.jpeg" alt="User avatar">
+            <img src="images/profile.jpeg" alt="User avatar" data-user-avatar>
           </button>
           <div id="profile-menu" class="profile-menu" hidden>
             <button type="button" data-action="profile" data-auth-only>View profile</button>
             <button type="button" data-action="reads" data-auth-only>Reading list</button>
             <button type="button" data-action="settings" data-auth-only>Settings</button>
+            <button type="button" data-action="admin" data-admin-only hidden>Admin console</button>
             <button type="button" data-action="login" data-guest-only>Log in</button>
             <button type="button" data-action="register" data-guest-only>Create account</button>
             <button type="button" data-action="signout" data-auth-only>Sign out</button>
@@ -93,8 +94,8 @@
       <div id="continue-reading" class="continue-reading" hidden>
         <div>
           <span class="continue-label">Continue reading</span>
-          <strong>The Kingship of Yikpee</strong>
-          <span>Chapter 3 · The Line Moves South</span>
+          <strong>The Royal Line of Lawra</strong>
+          <span>Page 2 · Memory in motion</span>
         </div>
         <button class="ghost" type="button" data-continue-reading>Continue</button>
       </div>
@@ -111,26 +112,26 @@
       <ul class="toc">
         <li>
           <div class="book">
-            <div class="free-note">First chapter free</div>
-            <h3><button class="open-book" onclick="goToBook('The Kingship of Yikpee','9','3')">The Kingship of Yikpee</button></h3>
-            <p class="teaser">The line of chiefs that began in Yikpee, and how the title moved through generations.</p>
-            <div class="meta">9 chapters<span class="price">GHS 0.50 / ch</span></div>
+            <div class="free-note">First pages free</div>
+            <h3><button class="open-book" onclick="goToBook('The Royal Line of Lawra','9','3')">The Royal Line of Lawra</button></h3>
+            <p class="teaser">How leadership, ritual, and memory moved through northern communities across generations.</p>
+            <div class="meta">9 chapters<span class="price">GHS 1.00 / page</span></div>
           </div>
         </li>
         <li>
           <div class="book">
-            <div class="free-note">First chapter free</div>
+            <div class="free-note">First pages free</div>
             <h3><button class="open-book" onclick="goToBook('The story behind Kobine Festival','4','2')">The story behind Kobine Festival</button></h3>
             <p class="teaser">Why Lawra dances every year, and what the festival remembers on the community's behalf.</p>
-            <div class="meta">4 chapters<span class="price">GHS 0.50 / ch</span></div>
+            <div class="meta">4 chapters<span class="price">GHS 1.00 / page</span></div>
           </div>
         </li>
         <li>
           <div class="book">
-            <div class="free-note">First chapter free</div>
-            <h3><button class="open-book" onclick="goToBook('Nkrumah in Lawra','5','2')">Nkrumah in Lawra</button></h3>
+            <div class="free-note">First pages free</div>
+            <h3><button class="open-book" onclick="goToBook('Nkrumah in the North','5','2')">Nkrumah in the North</button></h3>
             <p class="teaser">What one visit meant for a town far from the capital, and for the politics that followed.</p>
-            <div class="meta">5 chapters<span class="price">GHS 0.50 / ch</span></div>
+            <div class="meta">5 chapters<span class="price">GHS 1.00 / page</span></div>
           </div>
         </li>
       </ul>
@@ -146,8 +147,8 @@
         </li>
         <li>
           <span class="num">2</span>
-          <h3>Unlock chapters as you go</h3>
-          <p>Later chapters cost GHS 0.50 each, drawn straight from your wallet — no card charge mid-chapter, no subscription you forget about.</p>
+          <h3>Unlock pages as you go</h3>
+          <p>Each extra page costs GHS 1.00 and is paid securely through PayStack, with no surprise subscription charge.</p>
         </li>
         <li>
           <span class="num">3</span>
@@ -166,7 +167,7 @@
     </div>
  
     <div class="home-cta-band">
-      <h2>Six books, one wallet, no subscription to forget about.</h2>
+      <h2>Six books, one page at a time, no subscription to forget about.</h2>
       <button class="cta" onclick="showScreen('library', null); syncNav('library')">Browse the library</button>
     </div>
  
@@ -185,11 +186,11 @@
   <div class="sans" style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;">
     <div>
       <div class="sans" style="font-size:12px;color:var(--ink-dim);letter-spacing:0.03em;">Northern Ghana history, told in full</div>
-      <h1 style="font-size:34px;font-weight:normal;margin:6px 0 0;">Yikpee</h1>
+      <h1 style="font-size:34px;font-weight:normal;margin:6px 0 0;">Northern Collection</h1>
     </div>
     <div class="sans" style="text-align:right;font-size:12px;color:var(--ink-dim);">
-      Wallet balance<br>
-      <span id="library-balance" style="color:var(--ink);font-size:18px;">GHS 12.50</span>
+      Payment method<br>
+      <span id="library-balance" style="color:var(--ink);font-size:18px;">PayStack</span>
     </div>
   </div>
   <div class="stripe-rule" style="margin:20px 0 32px;"></div>
@@ -197,6 +198,7 @@
   <div class="library-toolbar" aria-label="Library filters and sorting">
     <div class="library-results"><strong id="library-result-count">6 books</strong><span id="library-result-context">in the collection</span></div>
     <div class="library-controls">
+      <button class="ghost upload-library-button" type="button" data-open-upload data-admin-only hidden>Upload a book</button>
       <label for="library-category">Category</label>
       <select id="library-category">
         <option value="all">All books</option>
@@ -219,57 +221,66 @@
     </div>
   </div>
 
+  <nav class="category-rail" aria-label="Browse stories by category">
+    <button class="category-chip active" type="button" data-library-category="all" aria-pressed="true">All stories</button>
+    <button class="category-chip" type="button" data-library-category="history" aria-pressed="false">History</button>
+    <button class="category-chip" type="button" data-library-category="festivals" aria-pressed="false">Festivals</button>
+    <button class="category-chip" type="button" data-library-category="leadership" aria-pressed="false">Leadership</button>
+    <button class="category-chip" type="button" data-library-category="education" aria-pressed="false">Education</button>
+    <button class="category-chip" type="button" data-library-category="community" aria-pressed="false">Community</button>
+  </nav>
+
   <div class="book-grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;">
-    <div class="card book-card" data-book-id="root-of-kontol" data-book-title="Root of Kontol" data-category="history community" data-chapters="6" data-progress="0">
-      <span class="pill pill-free sans">First chapter free</span>
-      <h3 style="font-size:20px;margin:12px 0 8px;">Root of Kontol</h3>
-      <p class="sans" style="font-size:13px;color:var(--ink-dim);line-height:1.6;margin:0 0 14px;">How one founder's arrival gave Lawra its name, and its first claim to the land.</p>
-      <div class="sans" style="font-size:12px;color:var(--ink-dim);">6 chapters · GHS 0.50 / chapter</div>
+    <div class="card book-card" data-book-id="root-of-kontol" data-book-title="Roots of the North" data-category="history community" data-chapters="6" data-progress="0">
+      <span class="pill pill-free sans">First pages free</span>
+      <h3 style="font-size:20px;margin:12px 0 8px;">Roots of the North</h3>
+      <p class="sans" style="font-size:13px;color:var(--ink-dim);line-height:1.6;margin:0 0 14px;">How the earliest communities shaped the traditions, trade, and identity of northern Ghana.</p>
+      <div class="sans" style="font-size:12px;color:var(--ink-dim);">6 chapters · GHS 1.00 / page</div>
       <div class="book-progress"><span style="width:0%"></span></div><div class="progress-label">Not started</div>
       <button class="cta book-open" type="button" data-open-book="root-of-kontol">Open book</button>
       <button class="save-book" type="button" data-save-book="root-of-kontol">Save for later</button>
     </div>
-    <div class="card book-card" data-book-id="kingship-of-yikpee" data-book-title="The Kingship of Yikpee" data-category="history leadership" data-chapters="9" data-progress="33">
-      <span class="pill pill-free sans">First chapter free</span>
-      <h3 style="font-size:20px;margin:12px 0 8px;">The Kingship of Yikpee</h3>
-      <p class="sans" style="font-size:13px;color:var(--ink-dim);line-height:1.6;margin:0 0 14px;">The line of chiefs that began in Yikpee, and how the title moved through generations.</p>
-      <div class="sans" style="font-size:12px;color:var(--ink-dim);">9 chapters · GHS 0.50 / chapter</div>
+    <div class="card book-card" data-book-id="kingship-of-yikpee" data-book-title="The Royal Line of Lawra" data-category="history leadership" data-chapters="9" data-progress="33">
+      <span class="pill pill-free sans">First pages free</span>
+      <h3 style="font-size:20px;margin:12px 0 8px;">The Royal Line of Lawra</h3>
+      <p class="sans" style="font-size:13px;color:var(--ink-dim);line-height:1.6;margin:0 0 14px;">How leadership, ritual, and memory were carried through northern communities across generations.</p>
+      <div class="sans" style="font-size:12px;color:var(--ink-dim);">9 chapters · GHS 1.00 / page</div>
       <div class="book-progress"><span style="width:33%"></span></div><div class="progress-label">In progress · Chapter 3 of 9</div>
       <button class="cta book-open" type="button" data-open-book="kingship-of-yikpee">Continue reading</button>
       <button class="save-book" type="button" data-save-book="kingship-of-yikpee">Save for later</button>
     </div>
     <div class="card book-card" data-book-id="kobine-festival" data-book-title="The Story behind Kobine Festival" data-category="festivals community" data-chapters="4" data-progress="0">
-      <span class="pill pill-free sans">First chapter free</span>
+      <span class="pill pill-free sans">First pages free</span>
       <h3 style="font-size:20px;margin:12px 0 8px;">The Story behind Kobine Festival</h3>
       <p class="sans" style="font-size:13px;color:var(--ink-dim);line-height:1.6;margin:0 0 14px;">Why Lawra dances every year, and what the festival remembers on the community's behalf.</p>
-      <div class="sans" style="font-size:12px;color:var(--ink-dim);">4 chapters · GHS 0.50 / chapter</div>
+      <div class="sans" style="font-size:12px;color:var(--ink-dim);">4 chapters · GHS 1.00 / page</div>
       <div class="book-progress"><span style="width:0%"></span></div><div class="progress-label">Not started</div>
       <button class="cta book-open" type="button" data-open-book="kobine-festival">Open book</button>
       <button class="save-book" type="button" data-save-book="kobine-festival">Save for later</button>
     </div>
     <div class="card book-card" data-book-id="dagbon-kingdom" data-book-title="The Dagbon Kingdom" data-category="history leadership community" data-chapters="11" data-progress="0">
-      <span class="pill pill-free sans">First chapter free</span>
+      <span class="pill pill-free sans">First pages free</span>
       <h3 style="font-size:20px;margin:12px 0 8px;">The Dagbon Kingdom</h3>
-      <p class="sans" style="font-size:13px;color:var(--ink-dim);line-height:1.6;margin:0 0 14px;">Leadership, succession, and the structures that held the kingdom together.</p>
-      <div class="sans" style="font-size:12px;color:var(--ink-dim);">11 chapters · GHS 0.50 / chapter</div>
+      <p class="sans" style="font-size:13px;color:var(--ink-dim);line-height:1.6;margin:0 0 14px;">Leadership, succession, and the institutions that held one of the north’s great kingdoms together.</p>
+      <div class="sans" style="font-size:12px;color:var(--ink-dim);">11 chapters · GHS 1.00 / page</div>
       <div class="book-progress"><span style="width:0%"></span></div><div class="progress-label">Not started</div>
       <button class="cta book-open" type="button" data-open-book="dagbon-kingdom">Open book</button>
       <button class="save-book" type="button" data-save-book="dagbon-kingdom">Save for later</button>
     </div>
-    <div class="card book-card" data-book-id="nkrumah-lawra" data-book-title="Nkrumah in Lawra" data-category="history community" data-chapters="5" data-progress="0">
-      <span class="pill pill-free sans">First chapter free</span>
-      <h3 style="font-size:20px;margin:12px 0 8px;">Nkrumah in Lawra</h3>
-      <p class="sans" style="font-size:13px;color:var(--ink-dim);line-height:1.6;margin:0 0 14px;">What one visit meant for a town far from the capital, and for the politics that followed.</p>
-      <div class="sans" style="font-size:12px;color:var(--ink-dim);">5 chapters · GHS 0.50 / chapter</div>
+    <div class="card book-card" data-book-id="nkrumah-lawra" data-book-title="Nkrumah in the North" data-category="history community" data-chapters="5" data-progress="0">
+      <span class="pill pill-free sans">First pages free</span>
+      <h3 style="font-size:20px;margin:12px 0 8px;">Nkrumah in the North</h3>
+      <p class="sans" style="font-size:13px;color:var(--ink-dim);line-height:1.6;margin:0 0 14px;">A look at how national politics and local memory met in the villages beyond the capital.</p>
+      <div class="sans" style="font-size:12px;color:var(--ink-dim);">5 chapters · GHS 1.00 / page</div>
       <div class="book-progress"><span style="width:0%"></span></div><div class="progress-label">Not started</div>
       <button class="cta book-open" type="button" data-open-book="nkrumah-lawra">Open book</button>
       <button class="save-book" type="button" data-save-book="nkrumah-lawra">Save for later</button>
     </div>
-    <div class="card book-card" data-book-id="education-north" data-book-title="The Establishment of Education" data-category="education community" data-chapters="7" data-progress="0">
-      <span class="pill pill-free sans">First chapter free</span>
-      <h3 style="font-size:20px;margin:12px 0 8px;">The Establishment of Education</h3>
-      <p class="sans" style="font-size:13px;color:var(--ink-dim);line-height:1.6;margin:0 0 14px;">How schooling reached the north, and who built the first classrooms.</p>
-      <div class="sans" style="font-size:12px;color:var(--ink-dim);">7 chapters · GHS 0.50 / chapter</div>
+    <div class="card book-card" data-book-id="education-north" data-book-title="Education in the North" data-category="education community" data-chapters="7" data-progress="0">
+      <span class="pill pill-free sans">First pages free</span>
+      <h3 style="font-size:20px;margin:12px 0 8px;">Education in the North</h3>
+      <p class="sans" style="font-size:13px;color:var(--ink-dim);line-height:1.6;margin:0 0 14px;">How schools, teachers, and communities built access to learning across the region.</p>
+      <div class="sans" style="font-size:12px;color:var(--ink-dim);">7 chapters · GHS 1.00 / page</div>
       <div class="book-progress"><span style="width:0%"></span></div><div class="progress-label">Not started</div>
       <button class="cta book-open" type="button" data-open-book="education-north">Open book</button>
       <button class="save-book" type="button" data-save-book="education-north">Save for later</button>
@@ -278,15 +289,65 @@
   <div id="library-empty" class="library-empty" hidden>No books match these filters. Try another category or sort option.</div>
 </div>
 
+<section id="upload" class="screen upload-screen" style="padding:40px 32px;max-width:760px;">
+  <div class="upload-card">
+    <button class="back-link" type="button" data-back-library>← Back to library</button>
+    <div class="profile-eyebrow">Admin collection management</div>
+    <h1>Upload a book for extraction</h1>
+    <p class="upload-intro">Upload the story once. We extract the reading content automatically, then you review it and publish it to readers with one action.</p>
+
+    <form id="book-upload-form" class="upload-form">
+      <div class="upload-dropzone" id="book-dropzone">
+        <input id="book-file" name="file" type="file" accept=".pdf,.epub,.doc,.docx" required>
+        <i class="fa-solid fa-file-arrow-up" aria-hidden="true"></i>
+        <strong>Choose a book file</strong>
+        <span id="book-file-name">PDF, EPUB, DOC, or DOCX up to 50 MB</span>
+      </div>
+
+      <div class="upload-fields">
+        <label for="book-title">Book title</label>
+        <input id="book-title" name="title" type="text" required placeholder="e.g. The Story behind Kobine Festival">
+        <label for="book-category">Category</label>
+        <select id="book-category" name="category" required>
+          <option value="history">History</option>
+          <option value="festivals">Festivals</option>
+          <option value="leadership">Leadership</option>
+          <option value="education">Education</option>
+          <option value="community">Community</option>
+        </select>
+        <label for="book-description">Short description</label>
+        <textarea id="book-description" name="description" rows="4" required placeholder="What should readers know before they begin?"></textarea>
+      </div>
+
+      <div class="upload-contract">
+        <strong>After upload</strong>
+        <span>When extraction is ready, review the story and choose <strong>Publish to readers</strong>. Readers only see published stories.</span>
+      </div>
+      <button class="cta" type="submit">Send for chapter extraction</button>
+      <div id="upload-status" class="upload-status" role="status" aria-live="polite"></div>
+    </form>
+
+    <div class="admin-imports" aria-labelledby="admin-imports-title">
+      <div class="section-head">
+        <div>
+          <div class="profile-eyebrow">Workflow</div>
+          <h2 id="admin-imports-title">Story imports</h2>
+        </div>
+        <button id="refresh-imports" class="ghost" type="button">Refresh status</button>
+      </div>
+      <div id="admin-import-list" class="admin-import-list" aria-live="polite">
+        <p class="admin-import-empty">No story imports yet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <div id="reader" class="screen reader" style="padding:40px 32px;max-width:640px;">
   <div class="reader-header">
     <button class="back-link" type="button" onclick="showScreen('library', null); syncNav('library')">← Back to library</button>
-    <div id="reader-chapter-label" class="chapter-label">The Kingship of Yikpee · Chapter 3</div>
-    <h1 id="reader-title">The Line Moves South</h1>
-    <div class="reader-meta"><span id="reader-progress">Chapter 3 of 9</span><span>GHS 0.50 to unlock</span></div>
-  </div>
-
-  <div id="reader-content" class="reader-content">
+    <div id="reader-chapter-label" class="chapter-label">The Royal Line of Lawra · Chapter 3</div>
+    <h1 id="reader-title">Memory in motion</h1>
+    <div class="reader-meta"><span id="reader-progress">Chapter 3 of 9</span><span>GHS 1.00 per page</span></div>
     <div id="reader-page-content" class="reader-page-content" aria-live="polite"></div>
   </div>
 
@@ -300,11 +361,30 @@
     <div class="weave" style="margin:28px 0;"></div>
     <div class="card reader-paywall-card sans">
       <div class="locked-note">Preview complete</div>
-      <div class="price-line">Unlock the full chapter for GHS 0.50</div>
-      <button id="unlock-chapter" class="cta" type="button">Unlock chapter</button>
+      <label for="reader-payment-scope">Access</label>
+      <select id="reader-payment-scope">
+        <option value="page">This page · GHS 1.00</option>
+        <option value="story">This whole story · GHS 10.00</option>
+      </select>
+      <label for="reader-payment-method">Payment method</label>
+      <select id="reader-payment-method">
+        <option value="mobile_money">Mobile Money</option>
+        <option value="card">Debit or credit card</option>
+      </select>
+      <div id="momo-fields">
+        <label for="reader-momo-provider">MoMo network</label>
+        <select id="reader-momo-provider">
+          <option value="mtn">MTN MoMo</option>
+          <option value="vod">Vodafone Cash</option>
+          <option value="tgo">AirtelTigo Money</option>
+        </select>
+        <label for="reader-momo-number">MoMo number</label>
+        <input id="reader-momo-number" type="tel" inputmode="tel" autocomplete="tel" placeholder="0541715807" value="0541715807">
+      </div>
+      <button id="unlock-chapter" class="cta" type="button">Unlock page</button>
     </div>
   </div>
-  <div id="reader-balance-line" class="balance-line reader-balance" aria-live="polite">Wallet balance: GHS 12.50 · 25 chapters left at this balance</div>
+  <div id="reader-balance-line" class="balance-line reader-balance" aria-live="polite">Secure PayStack payment · This page: GHS 1.00</div>
   <div id="reader-status" class="reader-status" role="status" aria-live="polite"></div>
 </div>
 
@@ -315,9 +395,9 @@
       <div class="book-cover-placeholder"><i class="fa-solid fa-landmark"></i><span id="details-category">History</span></div>
       <div>
         <div class="profile-eyebrow">Book details</div>
-        <h1 id="details-title">The Kingship of Yikpee</h1>
-        <p id="details-description">The line of chiefs that began in Yikpee, and how the title moved through generations.</p>
-        <div class="details-meta"><span id="details-chapters">9 chapters</span><span>GHS 0.50 / chapter</span><span id="details-progress">In progress</span></div>
+        <h1 id="details-title">The Royal Line of Lawra</h1>
+        <p id="details-description">How leadership, ritual, and memory were carried through northern communities across generations.</p>
+        <div class="details-meta"><span id="details-chapters">9 chapters</span><span>GHS 1.00 / page</span><span id="details-progress">In progress</span></div>
         <button id="details-open" class="cta" type="button">Continue reading</button>
         <button id="details-save" class="ghost" type="button">Save for later</button>
       </div>
@@ -327,7 +407,7 @@
       <div><span>Chapter 1</span><span class="chapter-free">Free</span></div>
       <div><span>Chapter 2</span><span class="chapter-unlocked">Available</span></div>
       <div><span>Chapter 3</span><span class="chapter-unlocked">Current</span></div>
-      <div><span>Chapter 4 onward</span><span>GHS 0.50 / chapter</span></div>
+      <div><span>Chapter 4 onward</span><span>GHS 1.00 / page</span></div>
     </div>
   </div>
 </section>
@@ -344,28 +424,25 @@
 
 <div id="wallet" class="screen sans" style="padding:40px 32px;max-width:520px;">
   <h1 style="font-size:26px;font-weight:normal;font-family:Georgia,serif;margin:0 0 4px;">Wallet</h1>
-  <div style="font-size:13px;color:var(--ink-dim);margin-bottom:24px;">Top up once, read chapter by chapter without repeated card charges.</div>
+  <div style="font-size:13px;color:var(--ink-dim);margin-bottom:24px;">Your successful PayStack page payments appear here.</div>
 
   <div class="card" style="margin-bottom:24px;">
-    <div style="font-size:12px;color:var(--ink-dim);">Current balance</div>
-    <div id="wallet-balance" style="font-size:36px;color:var(--clay);margin:6px 0 20px;">GHS 12.50</div>
+    <div style="font-size:12px;color:var(--ink-dim);">Payment provider</div>
+    <div id="wallet-balance" style="font-size:36px;color:var(--clay);margin:6px 0 20px;">PayStack</div>
     <div style="display:flex;gap:10px;">
-      <button class="ghost" type="button" data-open-topup>+ GHS 5</button>
-      <button class="ghost" type="button" data-open-topup>+ GHS 10</button>
-      <button class="ghost" type="button" data-open-topup>+ GHS 25</button>
-      <button class="cta" type="button" data-open-topup style="margin-left:auto;">Top up</button>
+      <button class="cta" type="button" onclick="showScreen('library', null); syncNav('library')" style="margin-left:auto;">Browse pages</button>
     </div>
   </div>
 
   <div style="font-size:13px;color:var(--ink-dim);margin-bottom:10px;">Recent activity</div>
   <div id="activity-list" style="border-top:1px solid var(--stripe);">
     <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--stripe);">
-      <span>The Kingship of Yikpee &mdash; Ch. 2</span>
-      <span style="color:var(--ink-dim);">&minus;GHS 0.50</span>
+      <span>The Royal Line of Lawra &mdash; Page 2</span>
+      <span style="color:var(--ink-dim);">&minus;GHS 1.00</span>
     </div>
     <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--stripe);">
-      <span>The Dagbon Kingdom &mdash; Ch. 4</span>
-      <span style="color:var(--ink-dim);">&minus;GHS 0.50</span>
+      <span>The Dagbon Kingdom &mdash; Page 4</span>
+      <span style="color:var(--ink-dim);">&minus;GHS 1.00</span>
     </div>
     <div style="display:flex;justify-content:space-between;padding:12px 0;">
       <span>Top up via Mobile Money</span>
@@ -379,9 +456,9 @@
 <section id="topup" class="screen topup-screen" style="padding:40px 32px;max-width:720px;">
   <div class="topup-card">
     <button class="back-link" type="button" onclick="showScreen('wallet', null)">← Back to wallet</button>
-    <div class="profile-eyebrow">Reader wallet</div>
-    <h1>Add credits</h1>
-    <p class="topup-intro">Top up your reading balance once, then unlock chapters without interrupting your reading.</p>
+    <div class="profile-eyebrow">PayStack payments</div>
+    <h1>Page payments</h1>
+    <p class="topup-intro">Payments are started from the locked page and verified against your account before access is granted.</p>
 
     <div class="topup-step">
       <span class="topup-step-number">1</span>
@@ -406,7 +483,7 @@
           <option value="Debit card">Debit card</option>
         </select>
         <label for="payment-reference">Mobile number or card reference</label>
-        <input id="payment-reference" type="text" inputmode="tel" placeholder="024 000 0000">
+        <input id="payment-reference" type="text" inputmode="tel" placeholder="0541715807" value="0541715807">
       </div>
     </div>
 
@@ -422,13 +499,18 @@
 <section id="profile" class="screen profile-screen" style="padding:40px 32px;max-width:720px;">
   <div class="profile-card">
     <div class="profile-identity">
-      <img src="images/profile.jpeg" alt="User avatar" class="profile-avatar">
+      <div class="profile-avatar-wrap">
+        <img src="images/profile.jpeg" alt="User avatar" class="profile-avatar" data-user-avatar>
+        <label class="avatar-upload-button" for="avatar-file">Change photo</label>
+        <input id="avatar-file" type="file" accept="image/jpeg,image/png,image/webp,image/gif">
+      </div>
       <div>
         <div class="profile-eyebrow">Your account</div>
-        <h1>Kwame Mensah</h1>
+        <h1>Kwaku Perey</h1>
         <p>Member since 2025 · Northern Heritage Library</p>
       </div>
     </div>
+    <div id="avatar-status" class="auth-status" role="status" aria-live="polite"></div>
     <div class="profile-stats">
       <div><strong>6</strong><span>Books available</span></div>
       <div><strong data-profile-chapters>3</strong><span>Chapters read</span></div>
@@ -531,14 +613,13 @@
       <div class="footer-col">
         <h3>Contact us</h3>
         <p><a href="mailto:kontolrdc@gmail.com">kontolrdc@gmail.com</a></p>
-        <p>+233 595 075 225</p>
-        <p>P.O. Box 123, Lawra, Upper West Region</p>
+        <p>0541715807</p>
       </div>
     </div>
   </div>
 
   <div class="footer-bar">
-    <span>Yikpee heritage library</span>
+    <span>Northern Heritage Library</span>
     <span>Recorded across Ghana's Upper West and Northern regions</span>
   </div>
 </footer>
