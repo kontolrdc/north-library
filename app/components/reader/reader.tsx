@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { BUSINESS_RULES } from '@/lib/config';
 import { fmtCurrency } from '@/lib/utils';
 import { apiRequest } from '@/lib/api';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 interface ReaderProps {
   bookId: string;
