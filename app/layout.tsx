@@ -3,6 +3,7 @@ import Script from "next/script";
 import Navbar from "@/app/components/navbar";
 import Footer from "@/app/components/footer";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next"
 
 export const metadata: Metadata = {
   title: "Northern Ghana Heritage Library",

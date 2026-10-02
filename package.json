@@ -20,6 +20,7 @@
     "@react-email/render": "^2.1.0",
     "@types/bcryptjs": "^2.4.6",
     "@types/pg": "^8.23.1",
+    "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
     "bcryptjs": "^3.0.3",
     "jose": "^6.2.12",
